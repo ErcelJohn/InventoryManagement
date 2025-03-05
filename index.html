@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorcycle Parts Inventory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1><br>Motorcycle Parts Inventory</h1>
+        <div id="inventoryContainer">
+            <img src="ariz.jpg" alt="Company Logo" id="inventoryLogo">
+            <!-- Your inventory list/table goes here -->
+        </div>
+        
+        <section class="add-item">
+            <h2>Add New Item</h2>
+            <form id="itemForm">
+                <input type="text" id="itemName" placeholder="Item Name" required>
+                <input type="number" id="itemPrice" placeholder="Price" step="0.01" min="0" required>
+                <input type="number" id="itemQuantity" placeholder="Quantity" min="0" required>
+                <button type="submit">Add Item</button>
+            </form>
+        </section>
+
+        <section class="inventory">
+            <h2>Current Inventory</h2>
+            <div class="inventory-controls">
+                <input type="text" id="searchBox" placeholder="Search by name...">
+                <button id="searchButton">Search</button>
+                
+                <select id="sortOptions">
+                    <option value="nameAsc">Sort by Name (A-Z)</option>
+                    <option value="nameDesc">Sort by Name (Z-A)</option>
+                    <option value="priceAsc">Sort by Price (Low-High)</option>
+                    <option value="priceDesc">Sort by Price (High-Low)</option>
+                </select>
+                
+            </div>
+            
+            
+            <table id="inventoryList">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price (₱)</th>
+                        <th>Quantity</th>
+                        <th>Total Value (₱)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2"><strong>Inventory Summary</strong></td>
+                        <td id="totalItems"></td>
+                        <td id="totalValue"></td>
+                        <td></td>
+                    </tr>
+                    <button onclick="logout()" style="position: absolute; top: 10px; right: 10px;">Logout</button>
+                </tfoot>
+            </table>
+        </section>
+    </div>
+
+
+
+    <script type="module" src="script.js"></script>
+    <script type="module" src="auth.js"></script>
+
+
+</body>
+</html>
+
